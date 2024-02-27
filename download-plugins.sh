@@ -19,5 +19,6 @@ for file in ./plugins/*; do
     logstash-plugin \
         prepare-offline-pack \
         --output "$outfile" \
+        --overwrite \
         $plugins
 done
