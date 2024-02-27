@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  plugin-download-job:
+    image: logstash:8.12.2
+    working_dir: "/workdir"
+    volumes:
+      - "./plugins:/workdir/plugins:r"
+      - "./download-plugins.sh:/workdir/download-plugins.sh:r"
+      - "./out:/workdir/out"
+    entrypoint: "./download-plugins.sh"
